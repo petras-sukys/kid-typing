@@ -1,0 +1,40 @@
+<html>
+<head>
+<script type="text/javascript">
+document.onkeypress = checkKeycode;
+
+    function checkKeycode(e) {
+        var keycode;
+        if (window.event) {
+            keycode = window.event.keyCode;
+        }
+        else if (e) keycode = e.which;
+
+        var character = String.fromCharCode(keycode);
+        var letterDiv = document.getElementById("letter1");
+		if (character != " ")
+			letterDiv.innerHTML += character.toUpperCase();
+		else
+			letterDiv.innerHTML = character.toUpperCase(); 
+    }
+</script>
+<style type="text/css">
+#letter1
+{
+font-size: 500px;
+padding: 300px;
+color: #CCCCCC;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+body {
+	text-align: center;
+	background-color: #333333
+}
+</style>
+<title>Kid Typing</title></head>
+<div id='letter1'></div>
+<body>
+</body>
+</html>
