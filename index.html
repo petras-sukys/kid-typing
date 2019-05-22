@@ -1,7 +1,24 @@
 <html>
 <head>
+<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
 document.onkeypress = checkKeycode;
+
+function hashCode(str) { // java String#hashCode
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+       hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return hash;
+} 
+
+function intToRGB(i){
+    var c = (i & 0x00FFFFFF)
+        .toString(16)
+        .toUpperCase();
+
+    return "00000".substring(0, 6 - c.length) + c;
+}
 
     function checkKeycode(e) {
         var keycode;
@@ -16,6 +33,11 @@ document.onkeypress = checkKeycode;
 			letterDiv.innerHTML += character.toUpperCase();
 		else
 			letterDiv.innerHTML = character.toUpperCase(); 
+		var hash = hashCode(letterDiv.innerHTML);
+		console.log("hash: " + hash);
+		var color = intToRGB(hash)
+		console.log("color: " + color);
+		$("body").css("background-color", color);
     }
 </script>
 <style type="text/css">
