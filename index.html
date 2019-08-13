@@ -13,7 +13,7 @@ function hashCode(str) { // java String#hashCode
 } 
 
 function intToRGB(i){
-    var c = (i & 0x00FFFFFF)
+    var c = (((i/2) & 0x00FFFFFF) + 127 )
         .toString(16)
         .toUpperCase();
 
@@ -37,7 +37,7 @@ function intToRGB(i){
 		console.log("hash: " + hash);
 		var color = intToRGB(hash)
 		console.log("color: " + color);
-		$("body").css("background-color", color);
+		//$("#letter1").css("color", color);
     }
 </script>
 <style type="text/css">
