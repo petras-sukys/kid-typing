@@ -1,9 +1,0 @@
-{
-  "prompts": [
-    {
-      "prompt": "I want to modify two things in this repository:\n\n1. make the run.sh script launch the python command and then automaticaly open default system web browser at the port specified (also would be great to lock python command to listen only on localhost)\n\n2. adjust the file so that on each keypress, a pleasant, mild tone would play for a brief period. Different key, different tone. Like a note. Would be great if it could be generated on the fly, but also having sound font file and playing MIDI is acceptable.\n\nSplit these objectives into very small tasks, remember that you have a very limited context. Feel free to compact your context after each subagent execution.",
-      "timestamp": "2025-06-30T10:00:00Z",
-      "golden": true
-    }
-  ]
-}
