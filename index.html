@@ -22,7 +22,7 @@ function intToRGB(i){
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playNote(freq) {
+    function playNote(keycode) {
         var oscillator = audioCtx.createOscillator();
         var gainNode = audioCtx.createGain();
         oscillator.type = 'sine';
@@ -51,7 +51,7 @@ function intToRGB(i){
         else if (e) keycode = e.which;
 
         var character = String.fromCharCode(keycode);
-        playNote();
+        playNote(keycode);
 
         var letterDiv = document.getElementById("letter1");
 		if (character != " ")
