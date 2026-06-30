@@ -22,11 +22,13 @@ function intToRGB(i){
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    function playNote() {
+    function playNote(freq) {
         var oscillator = audioCtx.createOscillator();
         var gainNode = audioCtx.createGain();
         oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(440, audioCtx.currentTime);
+        var freq = 261.63 * Math.pow(2, (keycode - 60) / 12);
+        if (!(freq > 0)) freq = 440;
+        oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
         gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
         gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
         oscillator.connect(gainNode);
