@@ -60,9 +60,9 @@ function intToRGB(i){
 			letterDiv.innerHTML = character.toUpperCase(); 
 		var hash = hashCode(letterDiv.innerHTML);
 		console.log("hash: " + hash);
-		var color = intToRGB(hash)
-		console.log("color: " + color);
-		//$("#letter1").css("color", color);
+		var bg_color = intToRGB(hashCode("key" + keycode));
+		console.log("bg_color: " + bg_color);
+		document.body.style.backgroundColor = bg_color;
     }
 </script>
 <style type="text/css">
