@@ -61,9 +61,9 @@ function intToRGBFromIndex(i){
 			letterDiv.innerHTML = character.toUpperCase(); 
 		var hash = hashCode(letterDiv.innerHTML);
 		console.log("hash: " + hash);
-		var bg_color = intToRGBFromIndex(hashCode("key" + keycode) & 0xF);
-		console.log("bg_color: " + bg_color);
-		document.body.style.backgroundColor = bg_color;
+		var color = intToRGBFromIndex(hashCode("key" + keycode) & 0xF);
+		console.log("color: " + color);
+		document.body.style.color = color;
     }
 </script>
 <style type="text/css">
