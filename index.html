@@ -12,7 +12,7 @@ function hashCode(str) { // java String#hashCode
     return hash;
 } 
 
-function intToRGB(i){
+function intToRGBFromIndex(i){
     var PALETTE = [
         "#5d6d7e", "#8ca4be", "#aeb6e0", "#b39edb", "#cecce2", "#d7c2f5",
         "#bcbdff", "#daaeef", "#fee1cc", "#df9bb0", "#bdcaae", "#84abb0", 
@@ -61,7 +61,7 @@ function intToRGB(i){
 			letterDiv.innerHTML = character.toUpperCase(); 
 		var hash = hashCode(letterDiv.innerHTML);
 		console.log("hash: " + hash);
-		var bg_color = intToRGB(hashCode("key" + keycode) & 0xF);
+		var bg_color = intToRGBFromIndex(hashCode("key" + keycode) & 0xF);
 		console.log("bg_color: " + bg_color);
 		document.body.style.backgroundColor = bg_color;
     }
